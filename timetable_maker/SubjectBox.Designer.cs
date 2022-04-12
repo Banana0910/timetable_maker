@@ -68,7 +68,7 @@
             this.panel1.Size = new System.Drawing.Size(93, 1);
             this.panel1.TabIndex = 2;
             // 
-            // SubjectBox
+            // Subject_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,7 +78,7 @@
             this.Controls.Add(this.name);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "SubjectBox";
+            this.Name = "Subject_table";
             this.Size = new System.Drawing.Size(93, 80);
             this.ResumeLayout(false);
             this.PerformLayout();

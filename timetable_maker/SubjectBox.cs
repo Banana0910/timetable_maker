@@ -23,9 +23,10 @@ namespace timetable_maker
 
         private void Add_placeholder(object sender, EventArgs e) {
             TextBox textbox = (TextBox)sender;
-            textbox.ForeColor = Color.Gray;
-            if (string.IsNullOrWhiteSpace(textbox.Text))
+            if (string.IsNullOrWhiteSpace(textbox.Text)) {
+                textbox.ForeColor = Color.Gray;
                 textbox.Text = textbox.Tag.ToString();
+            }
         }
 
         private void Remove_placeholder(object sender, EventArgs e) {

@@ -34,45 +34,11 @@
             this.wednesday = new System.Windows.Forms.FlowLayoutPanel();
             this.thursday = new System.Windows.Forms.FlowLayoutPanel();
             this.friday = new System.Windows.Forms.FlowLayoutPanel();
-            this.subject1 = new timetable_maker.Subject_table();
-            this.subject2 = new timetable_maker.Subject_table();
-            this.subject3 = new timetable_maker.Subject_table();
-            this.subject4 = new timetable_maker.Subject_table();
-            this.subject5 = new timetable_maker.Subject_table();
-            this.subject6 = new timetable_maker.Subject_table();
-            this.subject7 = new timetable_maker.Subject_table();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.subject8 = new timetable_maker.Subject_table();
-            this.subject9 = new timetable_maker.Subject_table();
-            this.subject10 = new timetable_maker.Subject_table();
-            this.subject11 = new timetable_maker.Subject_table();
-            this.subject12 = new timetable_maker.Subject_table();
-            this.subject13 = new timetable_maker.Subject_table();
-            this.subject14 = new timetable_maker.Subject_table();
-            this.subject15 = new timetable_maker.Subject_table();
-            this.subject16 = new timetable_maker.Subject_table();
-            this.subject17 = new timetable_maker.Subject_table();
-            this.subject18 = new timetable_maker.Subject_table();
-            this.subject19 = new timetable_maker.Subject_table();
-            this.subject20 = new timetable_maker.Subject_table();
-            this.subject21 = new timetable_maker.Subject_table();
-            this.subject22 = new timetable_maker.Subject_table();
-            this.subject23 = new timetable_maker.Subject_table();
-            this.subject24 = new timetable_maker.Subject_table();
-            this.subject25 = new timetable_maker.Subject_table();
-            this.subject26 = new timetable_maker.Subject_table();
-            this.subject27 = new timetable_maker.Subject_table();
-            this.subject28 = new timetable_maker.Subject_table();
-            this.subject29 = new timetable_maker.Subject_table();
-            this.subject30 = new timetable_maker.Subject_table();
-            this.subject31 = new timetable_maker.Subject_table();
-            this.subject32 = new timetable_maker.Subject_table();
-            this.subject33 = new timetable_maker.Subject_table();
-            this.subject34 = new timetable_maker.Subject_table();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -83,6 +49,41 @@
             this.load_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.path_box = new System.Windows.Forms.TextBox();
+            this.subject1 = new timetable_maker.SubjectBox();
+            this.subject2 = new timetable_maker.SubjectBox();
+            this.subject3 = new timetable_maker.SubjectBox();
+            this.subject4 = new timetable_maker.SubjectBox();
+            this.subject5 = new timetable_maker.SubjectBox();
+            this.subject6 = new timetable_maker.SubjectBox();
+            this.subject7 = new timetable_maker.SubjectBox();
+            this.subject8 = new timetable_maker.SubjectBox();
+            this.subject9 = new timetable_maker.SubjectBox();
+            this.subject10 = new timetable_maker.SubjectBox();
+            this.subject11 = new timetable_maker.SubjectBox();
+            this.subject12 = new timetable_maker.SubjectBox();
+            this.subject13 = new timetable_maker.SubjectBox();
+            this.subject14 = new timetable_maker.SubjectBox();
+            this.subject15 = new timetable_maker.SubjectBox();
+            this.subject16 = new timetable_maker.SubjectBox();
+            this.subject17 = new timetable_maker.SubjectBox();
+            this.subject18 = new timetable_maker.SubjectBox();
+            this.subject19 = new timetable_maker.SubjectBox();
+            this.subject20 = new timetable_maker.SubjectBox();
+            this.subject21 = new timetable_maker.SubjectBox();
+            this.subject22 = new timetable_maker.SubjectBox();
+            this.subject23 = new timetable_maker.SubjectBox();
+            this.subject24 = new timetable_maker.SubjectBox();
+            this.subject25 = new timetable_maker.SubjectBox();
+            this.subject26 = new timetable_maker.SubjectBox();
+            this.subject27 = new timetable_maker.SubjectBox();
+            this.subject28 = new timetable_maker.SubjectBox();
+            this.subject29 = new timetable_maker.SubjectBox();
+            this.subject30 = new timetable_maker.SubjectBox();
+            this.subject31 = new timetable_maker.SubjectBox();
+            this.subject32 = new timetable_maker.SubjectBox();
+            this.subject33 = new timetable_maker.SubjectBox();
+            this.subject34 = new timetable_maker.SubjectBox();
+            this.save_as_btn = new System.Windows.Forms.Button();
             this.main_panel.SuspendLayout();
             this.monday.SuspendLayout();
             this.tuesday.SuspendLayout();
@@ -98,8 +99,8 @@
             this.main_panel.Controls.Add(this.wednesday);
             this.main_panel.Controls.Add(this.thursday);
             this.main_panel.Controls.Add(this.friday);
-            this.main_panel.Location = new System.Drawing.Point(87, 81);
-            this.main_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_panel.Location = new System.Drawing.Point(87, 109);
+            this.main_panel.Margin = new System.Windows.Forms.Padding(2);
             this.main_panel.Name = "main_panel";
             this.main_panel.Size = new System.Drawing.Size(485, 563);
             this.main_panel.TabIndex = 0;
@@ -115,7 +116,7 @@
             this.monday.Controls.Add(this.subject6);
             this.monday.Controls.Add(this.subject7);
             this.monday.Location = new System.Drawing.Point(2, 2);
-            this.monday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.monday.Margin = new System.Windows.Forms.Padding(2);
             this.monday.Name = "monday";
             this.monday.Size = new System.Drawing.Size(93, 558);
             this.monday.TabIndex = 0;
@@ -131,7 +132,7 @@
             this.tuesday.Controls.Add(this.subject13);
             this.tuesday.Controls.Add(this.subject14);
             this.tuesday.Location = new System.Drawing.Point(99, 2);
-            this.tuesday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tuesday.Margin = new System.Windows.Forms.Padding(2);
             this.tuesday.Name = "tuesday";
             this.tuesday.Size = new System.Drawing.Size(93, 558);
             this.tuesday.TabIndex = 1;
@@ -146,7 +147,7 @@
             this.wednesday.Controls.Add(this.subject19);
             this.wednesday.Controls.Add(this.subject20);
             this.wednesday.Location = new System.Drawing.Point(196, 2);
-            this.wednesday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wednesday.Margin = new System.Windows.Forms.Padding(2);
             this.wednesday.Name = "wednesday";
             this.wednesday.Size = new System.Drawing.Size(93, 558);
             this.wednesday.TabIndex = 2;
@@ -162,7 +163,7 @@
             this.thursday.Controls.Add(this.subject26);
             this.thursday.Controls.Add(this.subject27);
             this.thursday.Location = new System.Drawing.Point(293, 2);
-            this.thursday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.thursday.Margin = new System.Windows.Forms.Padding(2);
             this.thursday.Name = "thursday";
             this.thursday.Size = new System.Drawing.Size(93, 558);
             this.thursday.TabIndex = 3;
@@ -178,10 +179,161 @@
             this.friday.Controls.Add(this.subject33);
             this.friday.Controls.Add(this.subject34);
             this.friday.Location = new System.Drawing.Point(390, 2);
-            this.friday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friday.Margin = new System.Windows.Forms.Padding(2);
             this.friday.Name = "friday";
             this.friday.Size = new System.Drawing.Size(93, 558);
             this.friday.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label1.Location = new System.Drawing.Point(121, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "월";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label2.Location = new System.Drawing.Point(218, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "화";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label3.Location = new System.Drawing.Point(315, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "수";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label4.Location = new System.Drawing.Point(412, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 21);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "목";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label5.Location = new System.Drawing.Point(509, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 21);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "금";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label6.Location = new System.Drawing.Point(31, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "1교시";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label7.Location = new System.Drawing.Point(31, 224);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 21);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "2교시";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label8.Location = new System.Drawing.Point(31, 303);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 21);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "3교시";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label9.Location = new System.Drawing.Point(31, 382);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 21);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "4교시";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label10.Location = new System.Drawing.Point(31, 461);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 21);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "5교시";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label11.Location = new System.Drawing.Point(31, 540);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 21);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "6교시";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label12.Location = new System.Drawing.Point(31, 619);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 21);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "7교시";
+            // 
+            // load_btn
+            // 
+            this.load_btn.Location = new System.Drawing.Point(7, 12);
+            this.load_btn.Name = "load_btn";
+            this.load_btn.Size = new System.Drawing.Size(75, 23);
+            this.load_btn.TabIndex = 13;
+            this.load_btn.Text = "불러오기";
+            this.load_btn.UseVisualStyleBackColor = true;
+            this.load_btn.Click += new System.EventHandler(this.load_btn_Click);
+            // 
+            // save_btn
+            // 
+            this.save_btn.Location = new System.Drawing.Point(7, 41);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(75, 23);
+            this.save_btn.TabIndex = 14;
+            this.save_btn.Text = "저장하기";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
+            // path_box
+            // 
+            this.path_box.AcceptsReturn = true;
+            this.path_box.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.path_box.BackColor = System.Drawing.Color.White;
+            this.path_box.Location = new System.Drawing.Point(87, 12);
+            this.path_box.Name = "path_box";
+            this.path_box.ReadOnly = true;
+            this.path_box.Size = new System.Drawing.Size(484, 23);
+            this.path_box.TabIndex = 15;
             // 
             // subject1
             // 
@@ -252,56 +404,6 @@
             this.subject7.Name = "subject7";
             this.subject7.Size = new System.Drawing.Size(93, 80);
             this.subject7.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label1.Location = new System.Drawing.Point(118, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "월";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label2.Location = new System.Drawing.Point(215, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 30);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "화";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label3.Location = new System.Drawing.Point(312, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 30);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "수";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label4.Location = new System.Drawing.Point(409, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 30);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "목";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label5.Location = new System.Drawing.Point(506, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 30);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "금";
             // 
             // subject8
             // 
@@ -573,113 +675,23 @@
             this.subject34.Size = new System.Drawing.Size(93, 80);
             this.subject34.TabIndex = 10;
             // 
-            // label6
+            // save_as_btn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label6.Location = new System.Drawing.Point(13, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 30);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "1교시";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label7.Location = new System.Drawing.Point(13, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 30);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "2교시";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label8.Location = new System.Drawing.Point(13, 265);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 30);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "3교시";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label9.Location = new System.Drawing.Point(13, 344);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 30);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "4교시";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label10.Location = new System.Drawing.Point(13, 423);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 30);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "5교시";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label11.Location = new System.Drawing.Point(13, 502);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 30);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "6교시";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("맑은 고딕", 16F);
-            this.label12.Location = new System.Drawing.Point(13, 581);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 30);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "7교시";
-            // 
-            // load_btn
-            // 
-            this.load_btn.Location = new System.Drawing.Point(7, 12);
-            this.load_btn.Name = "load_btn";
-            this.load_btn.Size = new System.Drawing.Size(75, 23);
-            this.load_btn.TabIndex = 13;
-            this.load_btn.Text = "불러오기";
-            this.load_btn.UseVisualStyleBackColor = true;
-            this.load_btn.Click += new System.EventHandler(this.load_btn_Click);
-            // 
-            // save_btn
-            // 
-            this.save_btn.Location = new System.Drawing.Point(7, 41);
-            this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(75, 23);
-            this.save_btn.TabIndex = 14;
-            this.save_btn.Text = "저장하기";
-            this.save_btn.UseVisualStyleBackColor = true;
-            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
-            // 
-            // path_box
-            // 
-            this.path_box.AcceptsReturn = true;
-            this.path_box.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.path_box.BackColor = System.Drawing.Color.White;
-            this.path_box.Location = new System.Drawing.Point(87, 12);
-            this.path_box.Name = "path_box";
-            this.path_box.ReadOnly = true;
-            this.path_box.Size = new System.Drawing.Size(484, 23);
-            this.path_box.TabIndex = 15;
+            this.save_as_btn.Location = new System.Drawing.Point(87, 41);
+            this.save_as_btn.Name = "save_as_btn";
+            this.save_as_btn.Size = new System.Drawing.Size(95, 23);
+            this.save_as_btn.TabIndex = 16;
+            this.save_as_btn.Text = "다른 이름 저장";
+            this.save_as_btn.UseVisualStyleBackColor = true;
+            this.save_as_btn.Click += new System.EventHandler(this.save_as_btn_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(582, 649);
+            this.ClientSize = new System.Drawing.Size(582, 681);
+            this.Controls.Add(this.save_as_btn);
             this.Controls.Add(this.path_box);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.load_btn);
@@ -697,7 +709,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.main_panel);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "시간표 생성기";
@@ -721,45 +733,45 @@
         private System.Windows.Forms.FlowLayoutPanel wednesday;
         private System.Windows.Forms.FlowLayoutPanel thursday;
         private System.Windows.Forms.FlowLayoutPanel friday;
-        private Subject_table subject1;
-        private Subject_table subject2;
-        private Subject_table subject3;
-        private Subject_table subject4;
-        private Subject_table subject5;
-        private Subject_table subject6;
-        private Subject_table subject7;
+        private SubjectBox subject1;
+        private SubjectBox subject2;
+        private SubjectBox subject3;
+        private SubjectBox subject4;
+        private SubjectBox subject5;
+        private SubjectBox subject6;
+        private SubjectBox subject7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Subject_table subject8;
-        private Subject_table subject9;
-        private Subject_table subject10;
-        private Subject_table subject11;
-        private Subject_table subject12;
-        private Subject_table subject13;
-        private Subject_table subject14;
-        private Subject_table subject15;
-        private Subject_table subject16;
-        private Subject_table subject17;
-        private Subject_table subject18;
-        private Subject_table subject19;
-        private Subject_table subject20;
-        private Subject_table subject21;
-        private Subject_table subject22;
-        private Subject_table subject23;
-        private Subject_table subject24;
-        private Subject_table subject25;
-        private Subject_table subject26;
-        private Subject_table subject27;
-        private Subject_table subject28;
-        private Subject_table subject29;
-        private Subject_table subject30;
-        private Subject_table subject31;
-        private Subject_table subject32;
-        private Subject_table subject33;
-        private Subject_table subject34;
+        private SubjectBox subject8;
+        private SubjectBox subject9;
+        private SubjectBox subject10;
+        private SubjectBox subject11;
+        private SubjectBox subject12;
+        private SubjectBox subject13;
+        private SubjectBox subject14;
+        private SubjectBox subject15;
+        private SubjectBox subject16;
+        private SubjectBox subject17;
+        private SubjectBox subject18;
+        private SubjectBox subject19;
+        private SubjectBox subject20;
+        private SubjectBox subject21;
+        private SubjectBox subject22;
+        private SubjectBox subject23;
+        private SubjectBox subject24;
+        private SubjectBox subject25;
+        private SubjectBox subject26;
+        private SubjectBox subject27;
+        private SubjectBox subject28;
+        private SubjectBox subject29;
+        private SubjectBox subject30;
+        private SubjectBox subject31;
+        private SubjectBox subject32;
+        private SubjectBox subject33;
+        private SubjectBox subject34;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -770,6 +782,7 @@
         private System.Windows.Forms.Button load_btn;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.TextBox path_box;
+        private System.Windows.Forms.Button save_as_btn;
     }
 }
 
