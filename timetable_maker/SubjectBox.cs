@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace timetable_maker
 {
-    public partial class Subject : UserControl
+    public partial class SubjectBox : UserControl
     {
-        public Subject()
+        public SubjectBox()
         {
             InitializeComponent();
             name.GotFocus += new System.EventHandler(Remove_placeholder);

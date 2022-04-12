@@ -1,6 +1,6 @@
 ﻿namespace timetable_maker
 {
-    partial class Subject
+    partial class SubjectBox
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -30,16 +30,17 @@
         {
             this.name = new System.Windows.Forms.TextBox();
             this.teacher = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // name
             // 
             this.name.BackColor = System.Drawing.Color.White;
-            this.name.Font = new System.Drawing.Font("맑은 고딕", 16F);
+            this.name.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.name.ForeColor = System.Drawing.Color.Gray;
-            this.name.Location = new System.Drawing.Point(19, 17);
+            this.name.Location = new System.Drawing.Point(3, 9);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(141, 50);
+            this.name.Size = new System.Drawing.Size(85, 29);
             this.name.TabIndex = 0;
             this.name.Tag = "이름";
             this.name.Text = "이름";
@@ -48,35 +49,45 @@
             // teacher
             // 
             this.teacher.BackColor = System.Drawing.Color.White;
-            this.teacher.Font = new System.Drawing.Font("맑은 고딕", 16F);
+            this.teacher.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.teacher.ForeColor = System.Drawing.Color.Gray;
-            this.teacher.Location = new System.Drawing.Point(19, 81);
+            this.teacher.Location = new System.Drawing.Point(3, 44);
             this.teacher.Name = "teacher";
-            this.teacher.Size = new System.Drawing.Size(141, 50);
+            this.teacher.Size = new System.Drawing.Size(85, 29);
             this.teacher.TabIndex = 1;
             this.teacher.Tag = "선생님";
             this.teacher.Text = "선생님";
             this.teacher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Subject
+            // panel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 79);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(93, 1);
+            this.panel1.TabIndex = 2;
+            // 
+            // SubjectBox
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.teacher);
             this.Controls.Add(this.name);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.Name = "Subject";
-            this.Size = new System.Drawing.Size(180, 150);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Name = "SubjectBox";
+            this.Size = new System.Drawing.Size(93, 80);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox teacher;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox name;
+        public System.Windows.Forms.TextBox teacher;
     }
 }
