@@ -36,11 +36,11 @@
             // name
             // 
             this.name.BackColor = System.Drawing.Color.White;
-            this.name.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.name.Font = new System.Drawing.Font("맑은 고딕", 8F);
             this.name.ForeColor = System.Drawing.Color.Gray;
             this.name.Location = new System.Drawing.Point(3, 9);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(85, 29);
+            this.name.Size = new System.Drawing.Size(73, 22);
             this.name.TabIndex = 0;
             this.name.Tag = "이름";
             this.name.Text = "이름";
@@ -49,11 +49,11 @@
             // teacher
             // 
             this.teacher.BackColor = System.Drawing.Color.White;
-            this.teacher.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.teacher.Font = new System.Drawing.Font("맑은 고딕", 8F);
             this.teacher.ForeColor = System.Drawing.Color.Gray;
-            this.teacher.Location = new System.Drawing.Point(3, 44);
+            this.teacher.Location = new System.Drawing.Point(3, 37);
             this.teacher.Name = "teacher";
-            this.teacher.Size = new System.Drawing.Size(85, 29);
+            this.teacher.Size = new System.Drawing.Size(73, 22);
             this.teacher.TabIndex = 1;
             this.teacher.Tag = "선생님";
             this.teacher.Text = "선생님";
@@ -63,12 +63,12 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 79);
+            this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(93, 1);
+            this.panel1.Size = new System.Drawing.Size(81, 1);
             this.panel1.TabIndex = 2;
             // 
-            // Subject_table
+            // SubjectBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,8 +78,8 @@
             this.Controls.Add(this.name);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "Subject_table";
-            this.Size = new System.Drawing.Size(93, 80);
+            this.Name = "SubjectBox";
+            this.Size = new System.Drawing.Size(81, 66);
             this.ResumeLayout(false);
             this.PerformLayout();
 
