@@ -7,10 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Collections.Specialized;
 using System.IO;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using System.Text.Json;
+using System.Net;
+using System.Xml;
+using System.Text.RegularExpressions;
 
 namespace timetable_maker
 {
@@ -19,11 +24,6 @@ namespace timetable_maker
         public Main()
         {
             InitializeComponent();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
         }
         private bool verify_json() {
             string jsonString = File.ReadAllText(path_box.Text);
@@ -117,7 +117,6 @@ namespace timetable_maker
                     path_box.Text = "";
                 }
             }
-
         }
 
         private void save_btn_Click(object sender, EventArgs e)
@@ -129,9 +128,9 @@ namespace timetable_maker
                 string[] _teacher = new string[count];
                 for (int j = 0; j < count; j++) {
                     SubjectBox sb = (SubjectBox)main_panel.Controls[i].Controls[j];
-                    if (!(string.IsNullOrWhiteSpace(sb.name.Text) || string.IsNullOrWhiteSpace(sb.teacher.Text))) {
+                    if (!(string.IsNullOrWhiteSpace(sb.name.Text))) {
                         _name[j] = sb.name.Text;
-                        _teacher[j] = sb.teacher.Text;
+                        _teacher[j] = (sb.teacher.ForeColor == Color.Gray) ? "" : sb.teacher.Text;
                     } else {
                         MessageBox.Show("공란이 있거나 저장 중 오류가 발생함..", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -194,6 +193,70 @@ namespace timetable_maker
             });
             File.WriteAllText(path_box.Text, jsonString);
             MessageBox.Show("성공적으로 저장되었음!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Main_Load(object sender, EventArgs e) {
+            path_box.Text = Properties.Settings.Default.timetable_path;
+            if (File.Exists(path_box.Text)) {
+                if (verify_json()) load_json();
+                else path_box.Text = "";
+            } else { path_box.Text = ""; }
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e) {
+            Properties.Settings.Default.timetable_path = path_box.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void load_neis_btn_Click(object sender, EventArgs e)
+        {
+            WebClient wc = new WebClient() {
+                QueryString = new NameValueCollection() {
+                    {"KEY", "f0491ec9a1784e2cb92d2a4070f1392b"},
+                    {"ATPT_OFCDC_SC_CODE", "S10"},
+                    {"SD_SCHUL_CODE", "9010277"},
+                    {"AY", "2022"},
+                    {"GRADE", grade_box.Text},
+                    {"CLASS_NM", class_box.Text},
+                    {"SEM", session_box.Text}
+                },
+                Encoding = Encoding.UTF8
+            };
+            string xmlString = wc.DownloadString("https://open.neis.go.kr/hub/hisTimetable");
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xmlString);
+            
+            XmlNodeList nodelist = doc.SelectNodes("hisTimetable/row");
+            foreach (XmlNode x in nodelist) {
+                DateTime datetime = DateTime.ParseExact(x.SelectSingleNode("ALL_TI_YMD").InnerText, "yyyyMMdd", new CultureInfo("ko-kr"));
+                if (datetime.DayOfWeek != DayOfWeek.Saturday && datetime.DayOfWeek != DayOfWeek.Sunday) {
+                    SubjectBox target = (SubjectBox)main_panel.Controls[(int)datetime.DayOfWeek-1].Controls[int.Parse(x.SelectSingleNode("PERIO").InnerText)-1];
+                    string subject_name = x.SelectSingleNode("ITRT_CNTNT").InnerText;
+                    subject_name = Regex.Replace(subject_name, @"\[\S+\]", "");
+                    target.name.Text = subject_name;
+                    target.name.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void resetNameBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Control week in main_panel.Controls) {
+                foreach (Control subject in week.Controls) {
+                    ((SubjectBox)subject).name.Text = "이름";
+                    ((SubjectBox)subject).name.ForeColor = Color.Gray;
+                }
+            }
+        }
+
+        private void resetTeacherBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Control week in main_panel.Controls) {
+                foreach (Control subject in week.Controls) {
+                    ((SubjectBox)subject).teacher.Text = "선생님";
+                    ((SubjectBox)subject).teacher.ForeColor = Color.Gray;
+                }
+            }
         }
     }
     public class Subject {
