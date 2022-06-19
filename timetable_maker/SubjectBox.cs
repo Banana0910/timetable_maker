@@ -45,9 +45,9 @@ namespace timetable_maker
 
         private void Remove_placeholder(object sender, EventArgs e) {
             TextBox textbox = (TextBox)sender;
-            textbox.ForeColor = Color.Black;
-            if (textbox.Tag.ToString() == textbox.Text) 
+            if (textbox.Tag.ToString() == textbox.Text && textbox.ForeColor == Color.Gray) 
                 textbox.Text = "";
+            textbox.ForeColor = Color.Black;
         }
     }
 }

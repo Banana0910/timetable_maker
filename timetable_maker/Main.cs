@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.Threading;
 using System.IO;
 using System.Net;
+using System.Drawing;
 using System.Xml;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -40,7 +41,9 @@ namespace timetable_maker
                 for (int j = 0; j < count; j++) {
                     SubjectBox sb = (SubjectBox)mainPanel.Controls[i].Controls[j];
                     sb.writeName(target.ChildNodes[j].Attributes["name"].InnerText);
-                    sb.writeTeacher(target.ChildNodes[j].Attributes["teacher"].InnerText);
+                    string teacher = target.ChildNodes[j].Attributes["teacher"].InnerText;
+                    if (string.IsNullOrEmpty(teacher)) sb.clearTeacher();
+                    else sb.writeTeacher(teacher);
                 }
             }
         }
@@ -57,7 +60,7 @@ namespace timetable_maker
                     if (!string.IsNullOrWhiteSpace(sb.name.Text)) {
                         XmlElement element = doc.CreateElement("subject");
                         element.SetAttribute("name", sb.name.Text);
-                        element.SetAttribute("teacher", sb.teacher.Text);
+                        element.SetAttribute("teacher", (sb.teacher.ForeColor == Color.Gray) ? "" : sb.teacher.Text);
                         weekday.AppendChild(element);
                     } else { return null; }
                 }
@@ -98,10 +101,10 @@ namespace timetable_maker
                 };
                 if (sfd.ShowDialog() == DialogResult.OK) {
                     pathBox.Text = sfd.FileName;
+                    doc.Save(pathBox.Text);
+                    MessageBox.Show("성공적으로 저장되었음!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            doc.Save(pathBox.Text);
-            MessageBox.Show("성공적으로 저장되었음!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -139,7 +142,7 @@ namespace timetable_maker
                 };
                 if (sfd.ShowDialog() == DialogResult.OK) {
                     pathBox.Text = sfd.FileName;
-                }
+                } else { return; }
             }
             doc.Save(pathBox.Text);
             MessageBox.Show("성공적으로 저장되었음!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -155,8 +158,8 @@ namespace timetable_maker
 
             SaveFileDialog sfd = new SaveFileDialog() {
                 FileName = "timetable",
-                DefaultExt = ".json",
-                Filter = "JSON Files(*.json)|*.json"
+                DefaultExt = ".xml",
+                Filter = "XML Files(*.xml)|*.xml"
             };
             if (sfd.ShowDialog() == DialogResult.OK) {
                 pathBox.Text = sfd.FileName;
