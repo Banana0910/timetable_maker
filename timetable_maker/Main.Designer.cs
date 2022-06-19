@@ -41,24 +41,24 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.load_btn = new System.Windows.Forms.Button();
-            this.save_btn = new System.Windows.Forms.Button();
-            this.path_box = new System.Windows.Forms.TextBox();
-            this.save_as_btn = new System.Windows.Forms.Button();
+            this.loadBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.pathBox = new System.Windows.Forms.TextBox();
+            this.saveAsBtn = new System.Windows.Forms.Button();
             this.friday = new System.Windows.Forms.FlowLayoutPanel();
             this.wednesday = new System.Windows.Forms.FlowLayoutPanel();
             this.tuesday = new System.Windows.Forms.FlowLayoutPanel();
             this.monday = new System.Windows.Forms.FlowLayoutPanel();
             this.main_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.thursday = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.load_neis_btn = new System.Windows.Forms.Button();
+            this.neisGroup = new System.Windows.Forms.GroupBox();
+            this.neisLoadBtn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.session_box = new System.Windows.Forms.TextBox();
+            this.sessionBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.class_box = new System.Windows.Forms.TextBox();
+            this.classBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.grade_box = new System.Windows.Forms.TextBox();
+            this.gradeBox = new System.Windows.Forms.TextBox();
             this.resetTeacherBtn = new System.Windows.Forms.Button();
             this.resetNameBtn = new System.Windows.Forms.Button();
             this.subjectBox1 = new timetable_maker.SubjectBox();
@@ -101,7 +101,7 @@
             this.monday.SuspendLayout();
             this.main_panel.SuspendLayout();
             this.thursday.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.neisGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -224,46 +224,46 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "7교시";
             // 
-            // load_btn
+            // loadBtn
             // 
-            this.load_btn.Location = new System.Drawing.Point(7, 12);
-            this.load_btn.Name = "load_btn";
-            this.load_btn.Size = new System.Drawing.Size(75, 23);
-            this.load_btn.TabIndex = 13;
-            this.load_btn.Text = "불러오기";
-            this.load_btn.UseVisualStyleBackColor = true;
-            this.load_btn.Click += new System.EventHandler(this.load_btn_Click);
+            this.loadBtn.Location = new System.Drawing.Point(7, 12);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.Size = new System.Drawing.Size(75, 23);
+            this.loadBtn.TabIndex = 13;
+            this.loadBtn.Text = "불러오기";
+            this.loadBtn.UseVisualStyleBackColor = true;
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
-            // save_btn
+            // saveBtn
             // 
-            this.save_btn.Location = new System.Drawing.Point(293, 90);
-            this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(95, 23);
-            this.save_btn.TabIndex = 14;
-            this.save_btn.Text = "저장하기";
-            this.save_btn.UseVisualStyleBackColor = true;
-            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            this.saveBtn.Location = new System.Drawing.Point(293, 90);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(95, 23);
+            this.saveBtn.TabIndex = 14;
+            this.saveBtn.Text = "저장하기";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // path_box
+            // pathBox
             // 
-            this.path_box.AcceptsReturn = true;
-            this.path_box.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.path_box.BackColor = System.Drawing.Color.White;
-            this.path_box.Location = new System.Drawing.Point(87, 12);
-            this.path_box.Name = "path_box";
-            this.path_box.ReadOnly = true;
-            this.path_box.Size = new System.Drawing.Size(402, 23);
-            this.path_box.TabIndex = 15;
+            this.pathBox.AcceptsReturn = true;
+            this.pathBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.pathBox.BackColor = System.Drawing.Color.White;
+            this.pathBox.Location = new System.Drawing.Point(87, 12);
+            this.pathBox.Name = "pathBox";
+            this.pathBox.ReadOnly = true;
+            this.pathBox.Size = new System.Drawing.Size(402, 23);
+            this.pathBox.TabIndex = 15;
             // 
-            // save_as_btn
+            // saveAsBtn
             // 
-            this.save_as_btn.Location = new System.Drawing.Point(394, 90);
-            this.save_as_btn.Name = "save_as_btn";
-            this.save_as_btn.Size = new System.Drawing.Size(95, 23);
-            this.save_as_btn.TabIndex = 16;
-            this.save_as_btn.Text = "다른 이름 저장";
-            this.save_as_btn.UseVisualStyleBackColor = true;
-            this.save_as_btn.Click += new System.EventHandler(this.save_as_btn_Click);
+            this.saveAsBtn.Location = new System.Drawing.Point(394, 90);
+            this.saveAsBtn.Name = "saveAsBtn";
+            this.saveAsBtn.Size = new System.Drawing.Size(95, 23);
+            this.saveAsBtn.TabIndex = 16;
+            this.saveAsBtn.Text = "다른 이름 저장";
+            this.saveAsBtn.UseVisualStyleBackColor = true;
+            this.saveAsBtn.Click += new System.EventHandler(this.saveAsBtn_Click);
             // 
             // friday
             // 
@@ -357,65 +357,67 @@
             this.thursday.Size = new System.Drawing.Size(81, 463);
             this.thursday.TabIndex = 3;
             // 
-            // groupBox1
+            // neisGroup
             // 
-            this.groupBox1.Controls.Add(this.load_neis_btn);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.session_box);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.class_box);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.grade_box);
-            this.groupBox1.Location = new System.Drawing.Point(7, 41);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(482, 46);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "나이스(neis)";
+            this.neisGroup.Controls.Add(this.neisLoadBtn);
+            this.neisGroup.Controls.Add(this.label15);
+            this.neisGroup.Controls.Add(this.sessionBox);
+            this.neisGroup.Controls.Add(this.label14);
+            this.neisGroup.Controls.Add(this.classBox);
+            this.neisGroup.Controls.Add(this.label13);
+            this.neisGroup.Controls.Add(this.gradeBox);
+            this.neisGroup.Location = new System.Drawing.Point(7, 41);
+            this.neisGroup.Name = "neisGroup";
+            this.neisGroup.Size = new System.Drawing.Size(482, 46);
+            this.neisGroup.TabIndex = 17;
+            this.neisGroup.TabStop = false;
+            this.neisGroup.Text = "나이스(neis)";
             // 
-            // load_neis_btn
+            // neisLoadBtn
             // 
-            this.load_neis_btn.Location = new System.Drawing.Point(279, 14);
-            this.load_neis_btn.Name = "load_neis_btn";
-            this.load_neis_btn.Size = new System.Drawing.Size(197, 23);
-            this.load_neis_btn.TabIndex = 18;
-            this.load_neis_btn.Text = "나이스에서 불러오기";
-            this.load_neis_btn.UseVisualStyleBackColor = true;
-            this.load_neis_btn.Click += new System.EventHandler(this.load_neis_btn_Click);
+            this.neisLoadBtn.Location = new System.Drawing.Point(279, 14);
+            this.neisLoadBtn.Name = "neisLoadBtn";
+            this.neisLoadBtn.Size = new System.Drawing.Size(197, 23);
+            this.neisLoadBtn.TabIndex = 18;
+            this.neisLoadBtn.Text = "나이스에서 불러오기";
+            this.neisLoadBtn.UseVisualStyleBackColor = true;
+            this.neisLoadBtn.Click += new System.EventHandler(this.neisLoadBtn_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(190, 23);
+            this.label15.Location = new System.Drawing.Point(181, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(31, 15);
             this.label15.TabIndex = 5;
             this.label15.Text = "학기";
             // 
-            // session_box
+            // sessionBox
             // 
-            this.session_box.Location = new System.Drawing.Point(155, 15);
-            this.session_box.Name = "session_box";
-            this.session_box.Size = new System.Drawing.Size(29, 23);
-            this.session_box.TabIndex = 4;
-            this.session_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.sessionBox.BackColor = System.Drawing.Color.White;
+            this.sessionBox.Location = new System.Drawing.Point(146, 15);
+            this.sessionBox.Name = "sessionBox";
+            this.sessionBox.Size = new System.Drawing.Size(29, 23);
+            this.sessionBox.TabIndex = 4;
+            this.sessionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(118, 23);
+            this.label14.Location = new System.Drawing.Point(119, 23);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(19, 15);
             this.label14.TabIndex = 3;
             this.label14.Text = "반";
             // 
-            // class_box
+            // classBox
             // 
-            this.class_box.Location = new System.Drawing.Point(83, 15);
-            this.class_box.Name = "class_box";
-            this.class_box.Size = new System.Drawing.Size(29, 23);
-            this.class_box.TabIndex = 2;
-            this.class_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.classBox.BackColor = System.Drawing.Color.White;
+            this.classBox.Location = new System.Drawing.Point(84, 15);
+            this.classBox.Name = "classBox";
+            this.classBox.Size = new System.Drawing.Size(29, 23);
+            this.classBox.TabIndex = 2;
+            this.classBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -426,13 +428,14 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "학년";
             // 
-            // grade_box
+            // gradeBox
             // 
-            this.grade_box.Location = new System.Drawing.Point(12, 15);
-            this.grade_box.Name = "grade_box";
-            this.grade_box.Size = new System.Drawing.Size(29, 23);
-            this.grade_box.TabIndex = 0;
-            this.grade_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gradeBox.BackColor = System.Drawing.Color.White;
+            this.gradeBox.Location = new System.Drawing.Point(12, 15);
+            this.gradeBox.Name = "gradeBox";
+            this.gradeBox.Size = new System.Drawing.Size(29, 23);
+            this.gradeBox.TabIndex = 0;
+            this.gradeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // resetTeacherBtn
             // 
@@ -802,11 +805,11 @@
             this.ClientSize = new System.Drawing.Size(501, 614);
             this.Controls.Add(this.resetNameBtn);
             this.Controls.Add(this.resetTeacherBtn);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.save_as_btn);
-            this.Controls.Add(this.path_box);
-            this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.load_btn);
+            this.Controls.Add(this.neisGroup);
+            this.Controls.Add(this.saveAsBtn);
+            this.Controls.Add(this.pathBox);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -836,8 +839,8 @@
             this.monday.ResumeLayout(false);
             this.main_panel.ResumeLayout(false);
             this.thursday.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.neisGroup.ResumeLayout(false);
+            this.neisGroup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -856,10 +859,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button load_btn;
-        private System.Windows.Forms.Button save_btn;
-        private System.Windows.Forms.TextBox path_box;
-        private System.Windows.Forms.Button save_as_btn;
+        private System.Windows.Forms.Button loadBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.TextBox pathBox;
+        private System.Windows.Forms.Button saveAsBtn;
         private System.Windows.Forms.FlowLayoutPanel friday;
         private System.Windows.Forms.FlowLayoutPanel wednesday;
         private System.Windows.Forms.FlowLayoutPanel tuesday;
@@ -900,14 +903,14 @@
         private SubjectBox subjectBox25;
         private SubjectBox subjectBox26;
         private SubjectBox subjectBox27;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button load_neis_btn;
+        private System.Windows.Forms.GroupBox neisGroup;
+        private System.Windows.Forms.Button neisLoadBtn;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox session_box;
+        private System.Windows.Forms.TextBox sessionBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox class_box;
+        private System.Windows.Forms.TextBox classBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox grade_box;
+        private System.Windows.Forms.TextBox gradeBox;
         private System.Windows.Forms.Button resetTeacherBtn;
         private System.Windows.Forms.Button resetNameBtn;
     }

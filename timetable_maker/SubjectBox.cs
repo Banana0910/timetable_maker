@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace timetable_maker
@@ -19,6 +13,26 @@ namespace timetable_maker
             teacher.GotFocus += new System.EventHandler(Remove_placeholder);
             name.LostFocus += new System.EventHandler(Add_placeholder);
             teacher.LostFocus += new System.EventHandler(Add_placeholder);
+        }
+
+        public void writeName(string text) {
+            name.Text = text;
+            name.ForeColor = Color.Black;
+        } 
+
+        public void writeTeacher(string text) {
+            teacher.Text = text;
+            teacher.ForeColor = Color.Black;
+        }
+
+        public void clearName() {
+            name.Text = "이름";
+            name.ForeColor = Color.Gray;
+        }
+
+        public void clearTeacher() {
+            teacher.Text = "선생님";
+            teacher.ForeColor = Color.Gray;
         }
 
         private void Add_placeholder(object sender, EventArgs e) {
@@ -35,6 +49,5 @@ namespace timetable_maker
             if (textbox.Tag.ToString() == textbox.Text) 
                 textbox.Text = "";
         }
-
     }
 }

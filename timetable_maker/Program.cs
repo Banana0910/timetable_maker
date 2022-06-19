@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace timetable_maker
@@ -17,6 +15,18 @@ namespace timetable_maker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
+        }
+    }
+
+    public class Subject {
+        public string[] name { get; set; }
+        public string[] teacher { get; set; }
+    }
+
+    public class TimeTable {
+        public List<Subject> weekday { get; set; }
+        public TimeTable() {
+            this.weekday = new List<Subject>();
         }
     }
 }
