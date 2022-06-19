@@ -18,15 +18,15 @@ namespace timetable_maker
         }
     }
 
-    public class Subject {
+    public class Subjects {
         public string[] name { get; set; }
         public string[] teacher { get; set; }
     }
 
     public class TimeTable {
-        public List<Subject> weekday { get; set; }
+        public List<Subjects> weekday { get; set; }
         public TimeTable() {
-            this.weekday = new List<Subject>();
+            this.weekday = new List<Subjects>();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading;
 using System.IO;
 using System.Net;
 using System.Xml;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace timetable_maker
@@ -37,7 +38,7 @@ namespace timetable_maker
                 XmlNode target = weekdays[i];
                 int count = (i == 2) ? 6 : 7;
                 for (int j = 0; j < count; j++) {
-                    SubjectBox sb = (SubjectBox)main_panel.Controls[i].Controls[j];
+                    SubjectBox sb = (SubjectBox)mainPanel.Controls[i].Controls[j];
                     sb.writeName(target.ChildNodes[j].Attributes["name"].InnerText);
                     sb.writeTeacher(target.ChildNodes[j].Attributes["teacher"].InnerText);
                 }
@@ -52,7 +53,7 @@ namespace timetable_maker
                 int count = (i == 2) ? 6 : 7;   
                 XmlElement weekday = doc.CreateElement("weekday");
                 for (int j = 0; j < count; j++) {
-                    SubjectBox sb = (SubjectBox)main_panel.Controls[i].Controls[j];
+                    SubjectBox sb = (SubjectBox)mainPanel.Controls[i].Controls[j];
                     if (!string.IsNullOrWhiteSpace(sb.name.Text)) {
                         XmlElement element = doc.CreateElement("subject");
                         element.SetAttribute("name", sb.name.Text);
@@ -74,7 +75,7 @@ namespace timetable_maker
                 int count = (i == 2) ? 6 : 7;   
                 XmlElement weekday = doc.CreateElement("weekday");
                 for (int j = 0; j < count; j++) {
-                    SubjectBox sb = (SubjectBox)main_panel.Controls[i].Controls[j];
+                    SubjectBox sb = (SubjectBox)mainPanel.Controls[i].Controls[j];
                     if (!string.IsNullOrWhiteSpace(sb.name.Text)) {
                         XmlElement element = doc.CreateElement("subject");
                         element.SetAttribute("name", sb.name.Text);
@@ -180,41 +181,52 @@ namespace timetable_maker
         private void neisLoadBtn_Click(object sender, EventArgs e)
         {
             new Thread(() => {
-                neisGroup.Enabled = false;
-                WebClient wc = new WebClient() {
-                    QueryString = new NameValueCollection() {
-                        {"KEY", "f0491ec9a1784e2cb92d2a4070f1392b"},
-                        {"ATPT_OFCDC_SC_CODE", "S10"},
-                        {"SD_SCHUL_CODE", "9010277"},
-                        {"AY", "2022"},
-                        {"GRADE", gradeBox.Text},
-                        {"CLASS_NM", classBox.Text},
-                        {"SEM", sessionBox.Text}
-                    },
-                    Encoding = Encoding.UTF8
-                };
-                string xmlString = wc.DownloadString("https://open.neis.go.kr/hub/hisTimetable");
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(xmlString);
-                
-                XmlNodeList nodelist = doc.SelectNodes("hisTimetable/row");
-                foreach (XmlNode x in nodelist) {
-                    DateTime datetime = DateTime.ParseExact(x.SelectSingleNode("ALL_TI_YMD").InnerText, "yyyyMMdd", new CultureInfo("ko-kr"));
-                    if (datetime.DayOfWeek != DayOfWeek.Saturday && datetime.DayOfWeek != DayOfWeek.Sunday) {
-                        SubjectBox target = (SubjectBox)main_panel.Controls[(int)datetime.DayOfWeek-1].Controls[int.Parse(x.SelectSingleNode("PERIO").InnerText)-1];
-                        string subject_name = x.SelectSingleNode("ITRT_CNTNT").InnerText;
-                        subject_name = Regex.Replace(subject_name, @"\[\S+\]", "");
-                        target.writeName(subject_name);
-                        resetTeacherBtn_Click(sender, e);
+                try {
+                    neisGroup.Enabled = false;
+                    WebClient wc = new WebClient() {
+                        QueryString = new NameValueCollection() {
+                            {"KEY", "f0491ec9a1784e2cb92d2a4070f1392b"},
+                            {"ATPT_OFCDC_SC_CODE", "S10"},
+                            {"SD_SCHUL_CODE", "9010277"},
+                            {"AY", "2022"},
+                            {"GRADE", gradeBox.Text},
+                            {"CLASS_NM", classBox.Text},
+                            {"SEM", sessionBox.Text}
+                        },
+                        Encoding = Encoding.UTF8
+                    };
+                    string xmlString = wc.DownloadString("https://open.neis.go.kr/hub/hisTimetable");
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xmlString);
+
+                    List<string[]> timetable = new List<string[]>() { new string[7], new string[7], new string[6], new string[7], new string[7] };
+                    XmlNodeList nodelist = doc.SelectNodes("hisTimetable/row");
+                    foreach (XmlNode x in nodelist) {
+                        DateTime datetime = DateTime.ParseExact(x.SelectSingleNode("ALL_TI_YMD").InnerText, "yyyyMMdd", new CultureInfo("ko-kr"));
+                        if (datetime.DayOfWeek != DayOfWeek.Saturday && datetime.DayOfWeek != DayOfWeek.Sunday) {
+                            string subject_name = x.SelectSingleNode("ITRT_CNTNT").InnerText;
+                            subject_name = Regex.Replace(subject_name, @"\[\S+\]", "");
+                            timetable[(int)datetime.DayOfWeek-1][int.Parse(x.SelectSingleNode("PERIO").InnerText)-1] = subject_name;
+                            resetTeacherBtn_Click(sender, e);
+                        }
                     }
-                }
-                neisGroup.Enabled = true;
+
+                    for (int i = 0; i < 5; i++) {
+                        int count = timetable[i].Length;
+                        for (int j = 0; j < count; j++) {
+                            SubjectBox target = (SubjectBox)mainPanel.Controls[i].Controls[j];
+                            if (string.IsNullOrEmpty(timetable[i][j])) target.clearName();
+                            else target.writeName(timetable[i][j]);
+                        }
+                    }
+                    neisGroup.Enabled = true;
+                } catch (Exception ex) { MessageBox.Show(ex.ToString()); }
             }).Start();
         }
 
         private void resetNameBtn_Click(object sender, EventArgs e)
         {
-            foreach (Control week in main_panel.Controls) {
+            foreach (Control week in mainPanel.Controls) {
                 foreach (Control subject in week.Controls) {
                     ((SubjectBox)subject).clearName();
                 }
@@ -223,7 +235,7 @@ namespace timetable_maker
 
         private void resetTeacherBtn_Click(object sender, EventArgs e)
         {
-            foreach (Control week in main_panel.Controls) {
+            foreach (Control week in mainPanel.Controls) {
                 foreach (Control subject in week.Controls) {
                     ((SubjectBox)subject).clearTeacher();
                 }
